@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Main page</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+	<!-- JavaScript Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+	<link href="//db.onlinewebfonts.com/c/8b122a26dcb2b208372103e0c5be9fb9?family=ITC+Kabel" rel="stylesheet" type="text/css"/> 
+</head>
+<body style="background-color:black">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <p style="font-family:'ITC Kabel'; font-weight: 30; font-size: 300%; " >TournamentMaker</p>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="/main">Home <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a style="font-family:'ITC Kabel'; font-weight: 30; font-size: 150%; color:orange ; " class="nav-link" href="/create_tournament">create tournament</a>
+	      </li>
+	      <!--<li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Dropdown
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	          <a class="dropdown-item" href="#">Action</a>
+	          <a class="dropdown-item" href="#">Another action</a>
+	          <div class="dropdown-divider"></div>
+	          <a class="dropdown-item" href="#">Something else here</a>
+	        </div>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link disabled" href="#">Disabled</a>
+	      </li>-->
+	    </ul>
+	  </div>
+</nav>
+{% for i in a %}
+	<section class="vh-100" >
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+				<div style="background-color:white;">
+				<!-- <form method="POST" action="/create_tournament" class="mx-1 mx-md-4"> -->
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                    	<label class="form-label" style="font-family:'ITC Kabel'; font-weight: 30; font-size: 120%; " for="form3Example1c">Game</label>
+                      <p> {{a[i]["game"]}} </p>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                    <label class="form-label" style="font-family:'ITC Kabel'; font-weight: 30; font-size: 120%; " for="form3Example3c">Max People</label>
+                      <p name="amount" >{{a[i]["max_people"]}}</p>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                    <label class="form-label" style="font-family:'ITC Kabel'; font-weight: 30; font-size: 120%; " for="form3Example4c">Location</label>
+                      <p>{{a[i]["location"]}}</p>
+                    </div>
+                  </div>
+
+
+
+                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+            		<a href="/join/{{i}}"><input class='btn btn-primary' type="submit" value="join" /></a>
+                  </div>
+
+                <!-- </form> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+{% endfor %}
+</body>
+</html>
